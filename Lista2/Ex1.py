@@ -3,17 +3,23 @@
 # usuário poderá entrar números ímpares, porém, eles não devem ser considerados
 # nos cálculos.
 
-numero = int(input('Digite uma sequencia de numeros para obeter a M.A., caso deseje parar digite 0: '))
-media = 0
+soma = 0
 contador = 0
 
-for i in range(numero):
-    if numero % 2 == 0:
-        media = numero
-        contador += 1
+for i in range(100000):
+    numero = int(input('Digite uma sequencia de numeros para obeter a M.A., caso deseje parar digite 0: '))
 
-    elif numero == 0:
+    if numero == 0:
         break
 
-print(f'A media Aritmética da sequência digitada é: {media / contador}')
+    if numero % 2 == 0:
+        soma += numero
+        contador += 1
+
+if contador > 0:
+    media = soma / contador
+    print(f'A media Aritmética da sequência digitada é: {media}')
+
+else:
+    print('Nenhum numero par foi digitado')
 
